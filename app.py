@@ -1,10 +1,13 @@
 import os
 from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
 from pydantic import BaseModel
 import openai
 import requests
 
+load_dotenv()
 app = FastAPI()
+
 
 # Получаем API ключи из переменных окружения
 openai.api_key = os.getenv("OPENAI_API_KEY")  # Устанавливаем ключ OpenAI из переменной окружения
